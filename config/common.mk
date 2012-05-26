@@ -146,5 +146,14 @@ else
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.cm.version=$(CM_VERSION) \
-  ro.modversion=$(CM_VERSION)
+    ro.cm.version=$(CM_VERSION) \
+    ro.modversion=$(CM_VERSION)
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.rommanager.developerid=cdesai \
+    ro.goo.developerid=cdesai \
+    ro.goo.board=$(TARGET_PRODUCT) \
+    ro.goo.rom=sgt7_$(TARGET_PRODUCT) \
+    ro.goo.version=$(CM_VERSION)
+    
+
