@@ -105,10 +105,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     openvpn
 
-# SGT7 Packages
-PRODUCT_PACKAGES += \
-    Bazinga
-
 PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/common
 
