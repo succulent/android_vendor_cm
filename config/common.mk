@@ -5,6 +5,14 @@ ifneq ($(TARGET_BOOTANIMATION_NAME),)
         vendor/cm/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
 endif
 
+ifdef CM_NIGHTLY
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.rommanager.developerid=cyanogenmodnightly
+else
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.rommanager.developerid=cyanogenmod
+endif
+
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -138,14 +146,5 @@ else
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.cm.version=$(CM_VERSION) \
-    ro.modversion=$(CM_VERSION)
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=cdesai \
-    ro.goo.developerid=cdesai \
-    ro.goo.board=$(TARGET_PRODUCT) \
-    ro.goo.rom=sgt7_$(TARGET_PRODUCT) \
-    ro.goo.version=$(CM_VERSION)
-    
-
+  ro.cm.version=$(CM_VERSION) \
+  ro.modversion=$(CM_VERSION)
