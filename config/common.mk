@@ -120,19 +120,22 @@ PRODUCT_VERSION_MAINTENANCE = 0-RC0
 ifdef CM_NIGHTLY
     CM_BUILDTYPE := NIGHTLY
 endif
-ifdef CM_SNAPSHOT
-    CM_BUILDTYPE := SNAPSHOT
-endif
-ifdef CM_EXPERIMENTAL
     CM_BUILDTYPE := EXPERIMENTAL
 endif
 ifdef CM_RELEASE
     CM_BUILDTYPE := RELEASE
 endif
-
-# If CM_BUILDTYPE is not defined, set to UNOFFICIAL
-ifndef CM_BUILDTYPE
+ifdef CM_BUILDTYPE
+    ifdef CM_EXTRAVERSION
+        # Force build type to EXPERIMENTAL
+        CM_BUILDTYPE := EXPERIMENTAL
+        # Add leading dash to CM_EXTRAVERSION
+        CM_EXTRAVERSION := -$(CM_EXTRAVERSION)
+    endif
+else
+    # If CM_BUILDTYPE is not defined, set to UNOFFICIAL
     CM_BUILDTYPE := UNOFFICIAL
+    CM_EXTRAVERSION :=
 endif
 
 ifdef CM_RELEASE
@@ -151,5 +154,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.board=$(TARGET_PRODUCT) \
     ro.goo.rom=sgt7_$(TARGET_PRODUCT) \
     ro.goo.version=$(CM_VERSION)
-    
-
