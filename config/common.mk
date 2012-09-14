@@ -96,7 +96,6 @@ PRODUCT_PACKAGES += \
     SoundRecorder \
     Basic
 
-
 # Custom CM packages
 PRODUCT_PACKAGES += \
     Trebuchet \
@@ -109,9 +108,9 @@ PRODUCT_PACKAGES += \
 # Extra tools in CM
 PRODUCT_PACKAGES += \
     openvpn \
-    e2fsck \
-    mke2fs \
-    tune2fs
+#    e2fsck \
+#    mke2fs \
+#    tune2fs
 
 # Openssh
 PRODUCT_PACKAGES += \
@@ -127,7 +126,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     rsync
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/dictionaries
+#PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/common
 
 PRODUCT_VERSION_MAJOR = 10
