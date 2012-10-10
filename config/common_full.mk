@@ -19,7 +19,7 @@ PRODUCT_PACKAGES += \
 #    MagicSmokeWallpapers \
 #    NoiseField \
 #    Galaxy4 \
-#    LiveWallpapers \
+    LiveWallpapers \
     LiveWallpapersPicker \
     VisualizationWallpapers \
 #    PhaseBeam
