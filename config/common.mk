@@ -170,4 +170,7 @@ endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.cm.version=$(CM_VERSION) \
-  ro.modversion=$(MODVERSION)
+  ro.modversion=$(CM_VERSION)
+
+-include $(WORKSPACE)/hudson/image-auto-bits.mk
+
